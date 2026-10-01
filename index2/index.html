@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Navratri Utsav | Jai Mata Di</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #fff8ed;
+            color: #35120a;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 18px 8%;
+
+            background: rgba(70, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+
+            box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: #ffd166;
+        }
+
+        .logo span {
+            color: #ff7b00;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffd166;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            padding: 120px 20px 60px;
+
+            background:
+                radial-gradient(circle at 50% 30%, #ffb703 0%, transparent 25%),
+                linear-gradient(135deg, #7b001c, #e85d04, #ff9f1c);
+
+            color: white;
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦";
+            position: absolute;
+            top: 15%;
+            left: 0;
+            width: 100%;
+
+            color: rgba(255,255,255,0.3);
+            font-size: 35px;
+            letter-spacing: 30px;
+
+            animation: sparkle 4s infinite;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            z-index: 2;
+        }
+
+        .om {
+            font-size: 75px;
+            color: #ffd166;
+
+            animation: glow 2s infinite alternate;
+        }
+
+        .hero h1 {
+            font-size: 65px;
+            margin: 15px 0;
+
+            text-shadow: 0 5px 20px rgba(0,0,0,0.4);
+        }
+
+        .hero h1 span {
+            color: #ffd166;
+        }
+
+        .hero p {
+            font-size: 22px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+
+            padding: 14px 30px;
+
+            background: #ffd166;
+            color: #6b0015;
+
+            text-decoration: none;
+
+            border-radius: 30px;
+
+            font-weight: bold;
+            font-size: 17px;
+
+            transition: 0.3s;
+
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-4px) scale(1.05);
+            background: white;
+        }
+
+        /* ================= DIYA ================= */
+
+        .diya {
+            position: absolute;
+            bottom: 60px;
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            font-size: 60px;
+
+            animation: float 2s infinite ease-in-out;
+        }
+
+        /* ================= SECTION ================= */
+
+        section {
+            padding: 90px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 40px;
+            color: #9d0208;
+        }
+
+        .section-title p {
+            margin-top: 10px;
+            color: #765341;
+        }
+
+        /* ================= ABOUT ================= */
+
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            gap: 50px;
+
+            align-items: center;
+        }
+
+        .about-text h2 {
+            color: #9d0208;
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #5f4638;
+        }
+
+        .durga-card {
+            background: linear-gradient(145deg, #9d0208, #e85d04);
+
+            border-radius: 25px;
+
+            padding: 60px 20px;
+
+            text-align: center;
+
+            color: white;
+
+            box-shadow: 0 15px 40px rgba(120,0,0,0.25);
+        }
+
+        .durga-icon {
+            font-size: 100px;
+            margin-bottom: 20px;
+        }
+
+        .durga-card h3 {
+            font-size: 30px;
+            color: #ffd166;
+        }
+
+        /* ================= NIGHTS ================= */
+
+        .nights {
+            background: #fff0d5;
+        }
+
+        .night-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(180px, 1fr));
+
+            gap: 20px;
+        }
+
+        .night {
+            background: white;
+
+            padding: 25px;
+
+            border-radius: 18px;
+
+            text-align: center;
+
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+
+            transition: 0.3s;
+        }
+
+        .night:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(150,0,0,0.18);
+        }
+
+        .night .number {
+            font-size: 35px;
+            font-weight: bold;
+            color: #e85d04;
+        }
+
+        .night h3 {
+            margin: 10px 0;
+            color: #9d0208;
+        }
+
+        /* ================= GARBA ================= */
+
+        .garba {
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    rgba(91,0,20,0.94),
+                    rgba(91,0,20,0.94)
+                );
+
+            color: white;
+        }
+
+        .garba h2 {
+            color: #ffd166;
+        }
+
+        .garba-content {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .garba-icon {
+            font-size: 90px;
+
+            animation: dance 1.5s infinite ease-in-out;
+        }
+
+        .garba p {
+            font-size: 19px;
+            line-height: 1.8;
+            margin: 25px 0;
+        }
+
+        /* ================= COUNTDOWN ================= */
+
+        .countdown-section {
+            text-align: center;
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .time-box {
+            background: #9d0208;
+            color: white;
+
+            min-width: 120px;
+
+            padding: 25px;
+
+            border-radius: 15px;
+
+            box-shadow: 0 8px 25px rgba(100,0,0,0.2);
+        }
+
+        .time-box h3 {
+            font-size: 40px;
+            color: #ffd166;
+        }
+
+        .time-box p {
+            margin-top: 5px;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #35000a;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 35px 20px;
+        }
+
+        footer h2 {
+            color: #ffd166;
+            margin-bottom: 10px;
+        }
+
+        footer p {
+            color: #e8cfc0;
+        }
+
+        /* ================= ANIMATIONS ================= */
+
+        @keyframes glow {
+
+            from {
+                text-shadow: 0 0 10px #ffd166;
+            }
+
+            to {
+                text-shadow:
+                    0 0 30px #ffd166,
+                    0 0 50px #ff9f1c;
+            }
+
+        }
+
+        @keyframes sparkle {
+
+            0% {
+                transform: translateX(-20px);
+            }
+
+            50% {
+                transform: translateX(20px);
+            }
+
+            100% {
+                transform: translateX(-20px);
+            }
+
+        }
+
+        @keyframes float {
+
+            0%,100% {
+                transform: translateX(-50%) translateY(0);
+            }
+
+            50% {
+                transform: translateX(-50%) translateY(-15px);
+            }
+
+        }
+
+        @keyframes dance {
+
+            0%,100% {
+                transform: rotate(-8deg);
+            }
+
+            50% {
+                transform: rotate(8deg);
+            }
+
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media(max-width: 768px) {
+
+            nav {
+                padding: 15px 5%;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title h2 {
+                font-size: 32px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<nav>
+
+    <div class="logo">
+        🪔 Nav<span>ratri</span>
+    </div>
+
+    <ul>
+
+        <li>
+            <a href="#home">Home</a>
+        </li>
+
+        <li>
+            <a href="#about">About</a>
+        </li>
+
+        <li>
+            <a href="#nights">9 Nights</a>
+        </li>
+
+        <li>
+            <a href="#garba">Garba</a>
+        </li>
+
+        <li>
+            <a href="#contact">Contact</a>
+        </li>
+
+    </ul>
+
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="om">
+            ॐ
+        </div>
+
+        <h1>
+            शुभ <span>नवरात्रि</span>
+        </h1>
+
+        <p>
+            Celebrate the divine power, devotion,
+            joy and colors of Navratri.
+        </p>
+
+        <a href="#about" class="btn">
+            Explore Navratri
+        </a>
+
+    </div>
+
+    <div class="diya">
+        🪔
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about">
+
+    <div class="section-title">
+
+        <h2>
+            🙏 Jai Mata Di 🙏
+        </h2>
+
+        <p>
+            The festival of divine energy and devotion
+        </p>
+
+    </div>
+
+
+    <div class="about">
+
+        <div class="about-text">
+
+            <h2>
+                The Spirit of Navratri
+            </h2>
+
+            <p>
+                Navratri is a celebration of devotion,
+                strength and the divine feminine energy.
+                During these sacred days, devotees worship
+                Maa Durga and celebrate with prayers,
+                music, dance and traditional festivities.
+            </p>
+
+            <br>
+
+            <p>
+                Garba and Dandiya bring people together
+                with colorful traditional clothing,
+                beautiful music and joyful celebrations.
+            </p>
+
+        </div>
+
+
+        <div class="durga-card">
+
+            <div class="durga-icon">
+                🛕
+            </div>
+
+            <h3>
+                Maa Durga
+            </h3>
+
+            <p>
+                शक्ति • भक्ति • विजय
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= 9 NIGHTS ================= -->
+
+<section class="nights" id="nights">
+
+    <div class="section-title">
+
+        <h2>
+            🌺 Nine Nights of Navratri
+        </h2>
+
+        <p>
+            Celebrate every night with devotion and joy
+        </p>
+
+    </div>
+
+
+    <div class="night-grid">
+
+
+        <div class="night">
+
+            <div class="number">
+                01
+            </div>
+
+            <h3>
+                Shailputri
+            </h3>
+
+            <p>
+                शक्ति और भक्ति
+            </p>
+
+        </div>
+
+
+        <div class="night">
+
+            <div class="number">
+                02
+            </div>
+
+            <h3>
+                Brahmacharini
+            </h3>
+
+            <p>
+                तपस्या और शांति
+            </p>
+
+        </div>
+
+
+        <div class="night">
+
+            <div class="number">
+                03
+            </div>
+
+            <h3>
+                Chandraghanta
+            </h3>
+
+            <p>
+                साहस और शौर्य
+            </p>
+
+        </div>
+
+
+        <div class="night">
+
+            <div class="number">
+                04
+            </div>
+
+            <h3>
+                Kushmanda
+            </h3>
+
+            <p>
+                ऊर्जा और प्रकाश
+            </p>
+
+        </div>
+
+
+        <div class="night">
+
+            <div class="number">
+                05
+            </div>
+
+            <h3>
+                Skandamata
+            </h3>
+
+            <p>
+                मातृत्व और प्रेम
+            </p>
+
+        </div>
+
+
+        <div class="night">
+
+            <div class="number">
+                06
+            </div>
+
+            <h3>
+                Katyayani
+            </h3>
+
+            <p>
+                शक्ति और विजय
+            </p>
+
+        </div>
+
+
+        <div class="night">
+
+            <div class="number">
+                07
+            </div>
+
+            <h3>
+                Kalaratri
+            </h3>
+
+            <p>
+                रक्षा और निर्भयता
+            </p>
+
+        </div>
+
+
+        <div class="night">
+
+            <div class="number">
+                08
+            </div>
+
+            <h3>
+                Mahagauri
+            </h3>
+
+            <p>
+                शांति और पवित्रता
+            </p>
+
+        </div>
+
+
+        <div class="night">
+
+            <div class="number">
+                09
+            </div>
+
+            <h3>
+                Siddhidatri
+            </h3>
+
+            <p>
+                सिद्धि और समृद्धि
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ================= GARBA ================= -->
+
+<section class="garba" id="garba">
+
+    <div class="garba-content">
+
+        <div class="garba-icon">
+            💃
+        </div>
+
+        <h2>
+            Garba & Dandiya
+        </h2>
+
+        <p>
+            Dance to the rhythm of devotion!
+            Gather with family and friends,
+            wear traditional colors and celebrate
+            the joy of Navratri with Garba and Dandiya.
+        </p>
+
+        <a href="#contact" class="btn">
+            Celebrate With Us
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ================= COUNTDOWN ================= -->
+
+<section class="countdown-section">
+
+    <div class="section-title">
+
+        <h2>
+            ⏳ Festival Countdown
+        </h2>
+
+        <p>
+            Get ready for the celebration!
+        </p>
+
+    </div>
+
+
+    <div class="countdown">
+
+        <div class="time-box">
+
+            <h3 id="days">
+                00
+            </h3>
+
+            <p>
+                Days
+            </p>
+
+        </div>
+
+
+        <div class="time-box">
+
+            <h3 id="hours">
+                00
+            </h3>
+
+            <p>
+                Hours
+            </p>
+
+        </div>
+
+
+        <div class="time-box">
+
+            <h3 id="minutes">
+                00
+            </h3>
+
+            <p>
+                Minutes
+            </p>
+
+        </div>
+
+
+        <div class="time-box">
+
+            <h3 id="seconds">
+                00
+            </h3>
+
+            <p>
+                Seconds
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact">
+
+    <div class="section-title">
+
+        <h2>
+            🪔 शुभ नवरात्रि 🪔
+        </h2>
+
+        <p>
+            May Maa Durga bless you and your family
+            with happiness, peace and prosperity.
+        </p>
+
+        <br>
+
+        <a href="#home" class="btn">
+            Jai Mata Di 🙏
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <h2>
+        🪔 Navratri Utsav
+    </h2>
+
+    <p>
+        शक्ति • भक्ति • उत्सव
+    </p>
+
+    <br>
+
+    <p>
+        © 2026 Navratri Festival Website
+    </p>
+
+</footer>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+    /*
+       Change this date to your desired
+       Navratri countdown date.
+    */
+
+    const festivalDate = new Date("October 11, 2026 00:00:00").getTime();
+
+
+    const countdown = setInterval(function () {
+
+        const now = new Date().getTime();
+
+        const distance = festivalDate - now;
+
+
+        if (distance < 0) {
+
+            document.getElementById("days").innerHTML = "00";
+            document.getElementById("hours").innerHTML = "00";
+            document.getElementById("minutes").innerHTML = "00";
+            document.getElementById("seconds").innerHTML = "00";
+
+            clearInterval(countdown);
+
+            return;
+        }
+
+
+        const days =
+            Math.floor(distance / (1000 * 60 * 60 * 24));
+
+
+        const hours =
+            Math.floor(
+                (distance % (1000 * 60 * 60 * 24))
+                / (1000 * 60 * 60)
+            );
+
+
+        const minutes =
+            Math.floor(
+                (distance % (1000 * 60 * 60))
+                / (1000 * 60)
+            );
+
+
+        const seconds =
+            Math.floor(
+                (distance % (1000 * 60))
+                / 1000
+            );
+
+
+        document.getElementById("days").innerHTML =
+            String(days).padStart(2, "0");
+
+
+        document.getElementById("hours").innerHTML =
+            String(hours).padStart(2, "0");
+
+
+        document.getElementById("minutes").innerHTML =
+            String(minutes).padStart(2, "0");
+
+
+        document.getElementById("seconds").innerHTML =
+            String(seconds).padStart(2, "0");
+
+
+    }, 1000);
+
+</script>
+
+
+</body>
+
+</html>
